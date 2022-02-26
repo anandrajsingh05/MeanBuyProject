@@ -1,8 +1,14 @@
 #filter{
-    padding-top: 50px;
     padding-left: 35px;
     padding-right: 15px;
+    padding-top: 10px;
     color: rgb(93, 94, 95);
+  }
+  h4{
+      padding-bottom: 20px;
+  }
+  hr+button{
+      margin-top: 5px;
   }
   .dropdown{
       font-size: 20px;

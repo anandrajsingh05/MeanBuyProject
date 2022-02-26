@@ -3,17 +3,21 @@ body{
 }
 .inr-sign::before{content:"\20B9"}
 .parent{
+    margin-top: 170px;
     display: grid;
     grid-template-columns:1fr 5fr;
     gap:20px;
+    margin-bottom: 80px;
 }
 #subCateg{
+    padding-top: 20px;
     background-color: white;
     padding-left: 35px;
    padding-right: 15px;
 }
 .underline_hover{
     display: inline-block;
+    padding-top: 20px;
     padding-bottom: 1px;
     position: relative;
 }
@@ -24,7 +28,7 @@ body{
   bottom: 0;
   width: 0;
   height: 1px;
-  background-color: black;
+  background-color: rgb(92, 83, 83);
   transition: width;
 }
 .underline_hover:hover::before{
@@ -35,7 +39,7 @@ a{
 }
 #products{
     padding-top: 50px;
-    padding-bottom: 100px;
+    padding-bottom: 60px;
     background-color: whitesmoke;
     display: grid;
     grid-template-columns: repeat(3,25%);
@@ -86,4 +90,7 @@ a{
     padding-left:10px;
     color: #008A00;
     font-size: 12px;
+}
+a{
+    color: rgb(70, 67, 67);
 }

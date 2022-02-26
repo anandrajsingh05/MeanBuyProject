@@ -6,6 +6,7 @@ body{
        padding-left: 20px;
        padding-top: 20px;
        padding-right: 20px;
+       padding-bottom: 20px;
        display: flex;
    }
    .proTop>:first-child>a{
@@ -17,15 +18,14 @@ body{
    }
    
    .parent{
+       margin: 160px 80px 150px 80px;
        display: grid;
        grid-template-columns:1fr 9fr 15fr;
        gap:80px;
-       margin-left: 80px;
-       margin-right: 80px;
    }
    #image{
        width:370px;
-       height:350px;
+       height:370px;
        margin-left: 20px;
    }
    #img{
@@ -36,8 +36,9 @@ body{
    #details{
        width:600px;
       justify-content: center;
-      height: 500px;
+      height: 450px;
       overflow-y: scroll;
+    
    }
    #title{
        display: grid;
@@ -45,28 +46,38 @@ body{
        justify-content: space-between;
        margin-top: 5px;
    }
-   #ratingBox, #priceBox{
+   #mapDetails{
+       margin-left: 10px;
+     
+   }
+   #ratingBox{
+       width:600px;
         display: flex;
         gap: 10px;
-        margin: 15px;
+        margin:10px
    }
    #priceBox{
-       gap:20px
+       gap:10px;
+       display: flex;
+       margin: 15px;
+       margin:10px
    }
-   .sp{
+   #sp{
        padding-top: 10px;
        font-size: 20px;
        font-family: sans-serif;
        color: rgb(119, 117, 117);
+       text-decoration: line-through;
    }
    #rating{
-       width:80px;
+       width:100px;
+       display: flex;
        font-size: 16px;
        font-weight: bold;
        color:white;
        background-color: rgb(15, 218, 15);
        border-radius: 5px;
-      padding: 3px 0px 3px 25px;
+      padding: 3px 10px 3px 25px;
    }
    #review{
        color: #F68815;
@@ -130,7 +141,7 @@ body{
    #Bprice{
        font-family: serif;
        padding-left: 15px;
-       margin-top: -20px;
+       margin-top: 10px;
        color: #fc8404;
    }
 
