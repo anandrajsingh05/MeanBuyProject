@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet"><link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<title>New Arrivals</title>
+<link rel="stylesheet" href="../commonStyles.css"/>
+
+</head>
+<body>
+    <h1 style="text-align: center">New Arrivals</h1>
+    <div class="parent">
+        <div id="subCateg">
+            <h3>Subcategories</h3>
+            <p class="underline_hover"><a href="../2ndLayerHTML/schoolBackpacks.html">School Backpacks</a></p>
+            <p class="underline_hover"><a href="../2ndLayerHTML/laptop.html">Top Selling Laptops</a></p>
+            <p class="underline_hover"><a href="../2ndLayerHTML/smartWatch.html">Top Smart Watches</a></p>
+            <p class="underline_hover"><a href="../2ndLayerHTML/mensWatch.html">Mens Watches</a></p>
+            <p class="underline_hover"><a href="../2ndLayerHTML/electronic.html">Top Selling Electronics</a></p>
+            <p class="underline_hover"><a href="../2ndLayerHTML/waterBottle.html">Water Bottles</a></p>
+            <p class="underline_hover"><a href="../2ndLayerHTML/keyboards_Mouse.html">Keyboards & Mouse</a></p>
+            <p class="underline_hover"><a href="../2ndLayerHTML/wirelessCharger.html">Wireless Chargers</a></p>
+            <p class="underline_hover"><a href="../2ndLayerHTML/wallArt.html">Top Selling Wall Art</a></p>
+            <p class="underline_hover"><a href="../2ndLayerHTML/bluetoothEarphone.html">Bluetooth Earphones</a></p>
+            <p class="underline_hover"><a href="../2ndLayerHTML/wirelessSpeaker.html">Wireless Speakers</a></p>
+        </div>
+        <div id="products"></div>
+    </div>
+</body>
+</html>
+
+<script src="NewArrivals.js"></script>
+<script>
+
+
+newArrivals.map(function(elem){
+    var box=document.createElement("div");
+
+// <--Image section--> //
+    var img=document.createElement("img")
+        img.setAttribute("src", elem.image);
+        img.setAttribute("id", "img")
+
+// <--Name & rating ection--> //
+    var title=document.createElement("div");
+    title.setAttribute("id", "title")
+
+    var name=document.createElement("div");
+        name.innerText=elem.name;
+        name.style.paddingLeft="10px"
+   
+    var rating=document.createElement("div")
+        rating.innerText=elem.rating;
+        rating.setAttribute("id", "rating")
+            var span=document.createElement("span")
+                span.setAttribute("class", "fa fa-star")
+                span.style.marginLeft="5px"
+   
+    rating.append(span)
+    title.append(name,rating)
+
+// hr section
+    var hr=document.createElement("hr")
+    hr.setAttribute("id", "hr")
+
+// <--price Section-->
+    var priceBox=document.createElement("div")
+ 
+    var symbol=document.createElement("span")
+    symbol.setAttribute("class", "inr-sign")
+    symbol.style.paddingLeft="10px"
+        var price=document.createElement("span")
+        price.innerText=elem.price;
+        price.setAttribute("id","price")
+
+    priceBox.append(symbol,price)
+
+// <--shipping ection--> //
+    var h6=document.createElement("h6")
+    h6.innerText=elem.para
+    h6.setAttribute("id","shipping")
+
+    //<--3rd Layer Section-->//
+        box.addEventListener("click", function(){
+            var displayLayer=[];
+            displayLayer.push(elem)
+            localStorage.setItem("displayLayer",JSON.stringify(displayLayer))
+
+        window.location.href="../Display3rdLayer/display3rdLayer.html"
+    })
+
+     //<--Append ection-->
+    box.append(img,title,hr,priceBox,h6)
+    document.querySelector("#products").append(box);
+})
+
+</script>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+  <title>Bluetooth Earphones</title>
+  
+  <link rel="stylesheet" href="../commonStyles.css"/>
+
+  <link rel="stylesheet" href="../common_2layFilter.css"/>
+ 
+  <link rel="stylesheet" href="../common_2layProTop.css"/>
+
+</head>
+
+<body>
+    
+    <div class="parent">
+
+       <!-- left side filter div -->
+            <div id="filter">
+            <div><h4>FILTER</h4></div>
+            <hr id="hr">
+            <button class="dropdown">BRANDS
+                <i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-container">
+                <p> <input type="checkbox"><a href="#">MB</a></p>
+                <p><input type="checkbox"><a href="#">San Duens</a></p>
+                <p><input type="checkbox"><a href="#">Xiaomi</a></p>
+                </div>
+            <hr id="hr">
+            <button class="dropdown">COLORS
+                <i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-container">
+                <p><input type="checkbox"><a href="#">Black</a></p>
+                <p><input type="checkbox"><a href="#">Gold</a></p>
+                <p><input type="checkbox"><a href="#">Green</a></p>
+                <p><input type="checkbox"><a href="#">Pink</a></p>
+                <p><input type="checkbox"><a href="#">Rose</a></p>
+                <p><input type="checkbox"><a href="#">Silver</a></p>
+                <p><input type="checkbox"><a href="#">Yellow</a></p>
+                <p><input type="checkbox"><a href="#">White</a></p>
+                <p><input type="checkbox"><a href="#">Multi-Color</a></p>
+                </div>
+            </div>
+
+     <!-- Product Div -->
+        <div>
+                <!-- protop-div -->
+                <div class="proTop">
+                    <div> <a href="#">Home</a>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        <a href="#">Mobile Accessories</a>
+                    </div>
+                
+                    <div class="felxDrop">
+                        <div>FEATURED ITEMS</div>
+                        <div style="padding: 0px 5px 0px 7px">|</div>
+                        <div><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+                    </div>
+                </div>
+
+                <!-- products -->
+            <div id="products"></div>
+        </div>
+    </div>
+    
+</body>
+</html>
+
+<script src="../homeData.js"></script>
+
+<!-- Filter JS part -->
+<script src="../common_2layFilter.js"></script>
+
+    <!-- Product JS part -->
+    <script>
+
+    var bluetoothEarphone=JSON.parse(localStorage.getItem("bluetoothEarphone"))
+
+    bluetoothEarphone.map(function(elem){
+        var box=document.createElement("div");
+
+    // <--Image section--> //
+        var img=document.createElement("img")
+            img.setAttribute("src", elem.image);
+            img.setAttribute("id", "img")
+
+    // <--Name & rating ection--> //
+        var title=document.createElement("div");
+        title.setAttribute("id", "title")
+
+        var name=document.createElement("div");
+            name.innerText=elem.name;
+            name.style.paddingLeft="10px"
+    
+        var rating=document.createElement("div")
+            rating.innerText=elem.rating;
+            rating.setAttribute("id", "rating")
+                var span=document.createElement("span")
+                    span.setAttribute("class", "fa fa-star")
+                    span.style.marginLeft="5px"
+    
+        rating.append(span)
+        title.append(name,rating)
+
+    // hr section
+        var hr=document.createElement("hr")
+        hr.setAttribute("id", "hr")
+
+    // <--price Section-->
+        var priceBox=document.createElement("div")
+    
+        var symbol=document.createElement("span")
+        symbol.setAttribute("class", "inr-sign")
+        symbol.style.paddingLeft="10px"
+            var price=document.createElement("span")
+            price.innerText=elem.price;
+            price.setAttribute("id","price")
+
+        priceBox.append(symbol,price)
+    // <--shipping ection--> //
+        var h6=document.createElement("h6")
+        h6.innerText=elem.para
+        h6.setAttribute("id","shipping")
+        
+         //<--3rd Layer Section-->//
+            box.addEventListener("click", function(){
+            var displayLayer=[];
+            displayLayer.push(elem)
+            localStorage.setItem("displayLayer",JSON.stringify(displayLayer))
+
+       window.location.href="../Display3rdLayer/display3rdLayer.html"
+    })
+
+        //<--Append ection-->
+        box.append(img,title,hr,priceBox,h6)
+        document.querySelector("#products").append(box);
+    })
+
+    </script>
+
+
