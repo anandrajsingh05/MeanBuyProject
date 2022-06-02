@@ -4,7 +4,7 @@ https://anandrajsingh05.github.io/MeanBuyProject/
 
 <p>The landing page was created by Krishna, and Atanu worked on the “New arrival”, “Best Deals”, and product description page, while Poorvi worked on the category like “Home & Living”, “kids and Moms” and Rudra worked on “Shop By Brand” section. I created all the pages which are required to purchase a product like “Sign up”, “Login”, and “payment page.</p>
 
-Stacks we have used:- HTML, CSS, and Javascript.
+<h4>Stacks we have used:- HTML, CSS, and Javascript.</h4>
 
 <h3>Here are some snapshots of our website :)</h3>
 <a href="https://linkedin.com/in/anandrajsingh5" target="_blank"><img align="center" src="https://miro.medium.com/max/700/1*-lZ5bgaCTzlauG4k5DljBQ.jpeg" alt="website images" height="400" width="1200" /></a>
